@@ -1,8 +1,19 @@
 {
   "name": "react-json-html-renderer",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A simple JSON renderer for React",
   "private": false,
+  "homepage": "https://github.com/mekku/react-json-html-renderer.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mekku/react-json-html-renderer.git"
+  },
+  "keywords": [
+    "react",
+    "json",
+    "html",
+    "renderer"
+  ],
   "scripts": {
     "build": "rollup -c --bundleConfigAsCjs",
     "start": "rollup -c -w --bundleConfigAsCjs",
