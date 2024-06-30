@@ -1,13 +1,67 @@
-import React from 'react';
-import { StoryFn, Meta } from '@storybook/react/types-6-0';
+import type { Meta, StoryObj } from '@storybook/react';
 import JsonRenderer from './JsonRenderer';
 
-export default {
+const meta = {
   title: 'Components/JsonRenderer',
   component: JsonRenderer,
-} as Meta;
+  args: {
+    data: {
+      hello: 'world',
+      str: 'string',
+      number: 1,
+      "null": null,
+      table: [{
+        "undefined": undefined,
+        "boolean": true,
+        object: {
+          foo: "foo1",
+          bar: {
+            hello: 'world',
+            str: 'string',
+          }
+        },
+        listMixed: [
+          "str",
+          {
+            foo: "foo1",
+            bar: [{
+              hello: 'world',
+              str: 'string',
+            }]
+          },
+          "str",
+        ],
+        list: [
+          {
+            foo: "foo1",
+            bar: [{
+              hello: 'world',
+              str: 'string',
+            }]
+          },
+          {
+            foo: "foo2",
+            bar: "bar2",
+          },
+          {
+            foo: "foo3",
+            bar: "bar3",
+          },
+          {
+            foo: "foo4",
+            bar: "bar4",
+          }
+        ]
+      }]
+    },
+  }
+} satisfies Meta<typeof JsonRenderer>;
 
-const Template: StoryFn = (args) => <JsonRenderer {...args} />;
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+
+const Template: Story = (args: any) => <JsonRenderer {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {};

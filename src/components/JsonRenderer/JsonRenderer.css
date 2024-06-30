@@ -1,0 +1,43 @@
+:root {
+    --json-border: 1px solid #DDD;
+    --json-background: #EEE;
+}
+
+.json-data-table,
+.json-list-table {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border-spacing: 0px;
+    border-collapse: collapse;
+    table-layout: auto;
+}
+
+.json-data-table td,
+.json-list-table td,
+.json-data-table th,
+.json-list-table th {
+    border: var(--json-border);
+    padding: 4px;
+    text-align: left;
+    width: auto;
+    line-height: 1.4em;
+}
+
+.json-data-table th,
+.json-list-table th {
+    font-weight: 600;
+    background-color: var(--json-background);
+    width: fit-content;
+    white-space: nowrap;
+    vertical-align: top;
+    text-transform: capitalize;
+}
+
+.json-list-table tr:nth-child(odd) {
+    background-color: #FFF;
+}
+
+.json-list-table tr:nth-child(even) {
+    background-color: #F9F9F9;
+}
