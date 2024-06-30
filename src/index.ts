@@ -1,1 +1,2 @@
-export { default as JsonRenderer } from './components/JsonRenderer/JsonRenderer';
+import JsonRenderer from './components/JsonRenderer/JsonRenderer';
+export default JsonRenderer;

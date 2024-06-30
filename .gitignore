@@ -5,11 +5,12 @@
 /.pnp
 .pnp.js
 
+
 # testing
 /coverage
 
 # production
-/build
+.rollup.cache
 
 # misc
 .DS_Store
@@ -23,3 +24,4 @@ yarn-debug.log*
 yarn-error.log*
 
 *storybook.log
+

@@ -14,6 +14,7 @@ export default {
             file: packageJson.main,
             format: 'cjs',
             sourcemap: true,
+            exports: 'default',
         },
         {
             file: packageJson.module,
@@ -23,14 +24,16 @@ export default {
     ],
     plugins: [
         peerDepsExternal(),
-        resolve(),
-        commonjs(),
-        typescript({
-            tsconfig: './tsconfig.json',
+        resolve({
+            extensions: ['.js', '.ts', '.tsx'],
         }),
+        commonjs(),
+        typescript({ tsconfig: "./tsconfig.json" }),
+        terser(),
         postcss({
             extensions: ['.css'],
-        }),
-        terser(),
+        })
     ],
-};
+    external: ["react", "react-dom"],
+}
+
